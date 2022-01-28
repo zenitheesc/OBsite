@@ -1,11 +1,41 @@
 html,
 body {
   height: 100%;
-  background-color: #272A2C;
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-color: var(--darkGrey);
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: -Roboto, apple-system, BlinkMacSystemFont, Segoe UI, Oxygen,
+      Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  position: relative;
+  scroll-behavior: smooth;
+  
+}
+
+:root{
+  --darkGrey: #272A2C;
+  --medGrey: #605F62;
+  --lightGrey: #C4C4C4;
+  --stdWhite: #E8E8E8;
+  --stdCyan: #1BC47D;
+}
+
+::-webkit-scrollbar {
+  width: 0.35em;
+  height: 0.5em;
+}
+
+::-webkit-scrollbar-track {
+  background-color: whitesmoke;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(93, 93, 99);
+
 }
 
 a {

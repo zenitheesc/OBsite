@@ -1,7 +1,7 @@
 .container {
     width: 30%;
-    height: 100vh;
-    background-color: grey;
+    height: 1000vh;
+    background-color: var(--medGrey);
     position: absolute;
     
 }
@@ -13,5 +13,5 @@
     text-align: center;
     margin-top: 7.5vh;
     height: 5vh;
-    background-color: white;
+    background-color: var(--stdWhite);
 }
