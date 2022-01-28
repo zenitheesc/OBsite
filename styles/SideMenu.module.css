@@ -1,0 +1,17 @@
+.container {
+    width: 30%;
+    height: 100vh;
+    background-color: grey;
+    position: absolute;
+    
+}
+
+.headerBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 7.5vh;
+    height: 5vh;
+    background-color: white;
+}
