@@ -8,7 +8,7 @@ export default function UploadButton() {
         <div className={styles.iconBox}>
             <BsUpload></BsUpload> 
         </div>
-        Upload
+        UPLOAD
     </button>
   );
 }
