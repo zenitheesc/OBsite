@@ -2,6 +2,7 @@ import React from "react";
 import styles from "../styles/SideMenu.module.css";
 import TeamButton from "./EquipeSideMenuButton";
 import UploadButton from "./UploadSideMenuButton";
+import HorizontalLine from "./HorizontalLine";
 
 export default function SideMenu() {
   return (
@@ -10,6 +11,9 @@ export default function SideMenu() {
         <TeamButton></TeamButton>
         <UploadButton></UploadButton>
       </div>
+
+      <HorizontalLine></HorizontalLine>
+
     </div>
   );
 }
