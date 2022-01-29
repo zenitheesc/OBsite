@@ -11,7 +11,7 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    margin-top: 7.5vh;
-    height: 5vh;
+    margin-top: 0vh;
+    height: 20vh;
     background-color: var(--stdWhite);
 }

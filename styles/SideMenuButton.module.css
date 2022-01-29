@@ -1,0 +1,35 @@
+.iconBox {
+    float: left;
+    width: 2vw;
+    margin-left: 0.7vw;
+    text-align: center;
+}
+
+.button {
+    display: inline-block;
+    padding: 0;
+    font-family: -Roboto, apple-system, BlinkMacSystemFont, Segoe UI, Oxygen,
+      Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-size: 20px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: var(--lightGrey);
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 3px #999;
+    height: 4vh;
+    width: 10vw;
+}
+    
+.button:hover {
+    background-color: var(--stdCyan);
+}
+    
+.button:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
