@@ -1,9 +1,9 @@
 .container {
     width: 30%;
-    height: 1000vh;
+    min-height: 100vh;
     background-color: var(--medGrey);
     position: absolute;
-    
+    overflow-y: auto;
 }
 
 .headerBox {
