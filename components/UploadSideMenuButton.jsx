@@ -4,11 +4,13 @@ import {BsUpload} from 'react-icons/bs';
 
 export default function UploadButton() {
   return (
-    <button className={styles.button}>
+    <>
+      <label for="arquivo" className={styles.button}> UPLOAD
         <div className={styles.iconBox}>
-            <BsUpload></BsUpload> 
+              <BsUpload></BsUpload> 
         </div>
-        UPLOAD
-    </button>
+        <input className={styles.input} type="file" name="arquivo" id="arquivo"></input>
+      </label>      
+    </>
   );
 }

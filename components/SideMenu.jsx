@@ -3,6 +3,7 @@ import styles from "../styles/SideMenu.module.css";
 import TeamButton from "./EquipeSideMenuButton";
 import UploadButton from "./UploadSideMenuButton";
 import HorizontalLine from "./HorizontalLine";
+import Footer from "./Footer";
 
 export default function SideMenu() {
   return (
@@ -14,6 +15,8 @@ export default function SideMenu() {
 
       <HorizontalLine></HorizontalLine>
 
+      <Footer></Footer>
     </div>
+
   );
 }
