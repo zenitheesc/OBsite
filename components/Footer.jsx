@@ -10,14 +10,16 @@ export default function Footer() {
         <div className={styles.footerContainer}>
             <div className={styles.portrait}>
                 <Image
-                    src={obsatLogo}
+                    src={zenithLogo}
                     alt="Picture of the author"  
-                />
+                    layout="fill"
+               />
             </div>
             <div className={styles.portrait}>
                 <Image
-                    src={zenithLogo}
+                    src={obsatLogo}
                     alt="Picture of the author"  
+                    layout="fill"
                 />
             </div>
 
