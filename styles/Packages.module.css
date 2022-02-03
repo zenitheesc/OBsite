@@ -24,8 +24,17 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 3px #999;
 }
 
 .PackageButton:hover{
+    background-color: var(--stdCyan);
+    color: var(--stdWhite);
+}
+
+.PackageButton:active {
     opacity: 0.8;
+    transform: translateY(4px);
 }
