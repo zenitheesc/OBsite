@@ -4,23 +4,19 @@ import Image from 'next/image'
 import obsatLogo from '../public/images/logo-obsat.png'
 import zenithLogo from '../public/images/logo-zenith.png'
 
-
 export default function Footer() {
     return (
         <div className={styles.footerContainer}>
             <div className={styles.portrait}>
-                <Image
-                    src={zenithLogo}
-                    alt="Picture of the author"  
-                    layout="fill"
-               />
+                <div className={styles.image}>
+                    <Image src={obsatLogo} alt="Logo OBSAT"></Image>
+                </div>
             </div>
             <div className={styles.portrait}>
-                <Image
-                    src={obsatLogo}
-                    alt="Picture of the author"  
-                    layout="fill"
-                />
+                <div className={styles.image}>
+                    <Image src={zenithLogo} alt="Logo Zenith"></Image>
+                </div>
+
             </div>
 
         </div>
