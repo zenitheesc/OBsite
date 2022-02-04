@@ -4,7 +4,6 @@ import Image from 'next/image'
 import obsatLogo from '../public/images/logo-obsat.png'
 import zenithLogo from '../public/images/logo-zenith.png'
 
-
 export default function Footer() {
     return (
         <div className={styles.footerContainer}>
