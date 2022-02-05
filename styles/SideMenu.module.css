@@ -5,6 +5,8 @@
     background-color: var(--medGrey);
     position: absolute;  
     overflow-y: auto;
+    resize: horizontal;
+    overflow:auto;
 }
 
 .headerBox {
