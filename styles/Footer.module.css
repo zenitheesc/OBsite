@@ -1,14 +1,14 @@
 .footerContainer {
-    position: relative;
+    position: absolute;
     bottom: 0px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     width: 100%;
+    background-color: var(--lightGrey);
 }
 
 .portrait {
     display: flex;
-    text-align: center;
     align-items: center;
     justify-content: center;
     padding: 20px;

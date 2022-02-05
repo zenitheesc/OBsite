@@ -1,7 +1,6 @@
 .horizontalLine {
     margin: auto;
     background-color: var(--stdWhite);
-    height: 6px;
-    align-self: center;
-    width: 70%;
+    height: 2px;
+    width: 90%;
 }

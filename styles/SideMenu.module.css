@@ -4,9 +4,14 @@
     min-height: 100vh;
     background-color: var(--medGrey);
     position: absolute;  
-    overflow-y: auto;
+}
+
+.wrapper {
+    width: 100%;
+    height: 100%;
+    position: absolute;
     resize: horizontal;
-    overflow:auto;
+    overflow: auto;
 }
 
 .headerBox {
@@ -17,5 +22,5 @@
     text-align: center;
     margin-top: 0vh;
     height: 15vh;
-    padding: 12px;
+    padding: 5% 5vh 5% 5vh;
 }
