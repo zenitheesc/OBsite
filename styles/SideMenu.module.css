@@ -11,9 +11,11 @@
 
 .headerBox {
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     text-align: center;
     margin-top: 0vh;
     height: 15vh;
+    padding: 12px;
 }

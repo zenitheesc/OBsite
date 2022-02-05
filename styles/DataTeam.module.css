@@ -1,18 +1,15 @@
 .inputNumber {
-    padding: 12px;
-    margin-left: 0px;
+    padding: 1.5rem;
     margin-right: 20px;
-    display: inline-flex;
     border-radius: 5px;
-    height: 6vh;
-    width: 13vw;
     background-color: var(--lightGrey);
-    color: black;
     border: 0px solid var(--lightGrey);
-    -moz-appearance: textfield;
-    text-transform: uppercase;
+    color: black;
     font-weight: bold;
     font-size: 15px;
+    text-transform: uppercase;
+    -moz-appearance: textfield;
+    -webkit-appearance: textfield;
 }
 
 .inputNumber:hover {
@@ -25,7 +22,6 @@
 
 .labelFile {
     padding: 1.5rem;
-    height: 7vh;
     width: 50vw;
     background-color: var(--lightGrey);
     color: black;
@@ -46,7 +42,6 @@
 }
 
 .inputFile {
-    height: 6vh;
     display: none;
 }
     
