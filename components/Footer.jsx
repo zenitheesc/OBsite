@@ -8,20 +8,19 @@ export default function Footer() {
     return (
         <div className={styles.footerContainer}>
             <div className={styles.portrait}>
-                <Image
-                    src={zenithLogo}
-                    alt="Picture of the author"  
-                    layout="fill"
-               />
-            </div>
-            <div className={styles.portrait}>
-                <Image
-                    src={obsatLogo}
-                    alt="Picture of the author"  
-                    layout="fill"
+                <img
+                    src="/images/logo-zenith.png"
+                    alt="Zenith logo"
+                    className={styles.image}  
                 />
             </div>
-
+            <div className={styles.portrait}>
+                <img
+                    src="/images/logo-obsat.png"
+                    alt="OBSAT logo"
+                    className={styles.image}  
+                />
+            </div>
         </div>
     );
 }
