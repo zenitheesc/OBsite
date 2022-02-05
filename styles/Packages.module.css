@@ -1,7 +1,7 @@
 .WrapperGrid{
-    width: auto;
-    margin: 0 auto;
-    padding: 0 70px;
+    width: 100%;
+    margin: 0;
+    padding: 0 15% 0 15%;
     color: var(--stdWhite);
     text-align: center;
     position: absolute;
