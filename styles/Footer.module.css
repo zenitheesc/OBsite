@@ -1,11 +1,8 @@
 .footerContainer {
-    background-color: var(--lightGrey);
-    position: absolute;
+    position: relative;
     bottom: 0px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 20px;
-    height: 18vh;
     width: 100%;
 }
 
@@ -19,5 +16,5 @@
 }
 
 .image {
-    height: 7rem;
+    height: 5rem;
 }
