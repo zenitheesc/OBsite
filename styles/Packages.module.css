@@ -9,7 +9,7 @@
 .ContentGrid{
     display: grid;
     grid-gap: 20px;
-    margin-bottom: 16vh;
+    margin-bottom: 10rem;
 }
 
 .PackageButton{
