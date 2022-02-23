@@ -1,8 +1,12 @@
 import React from "react";
 import SideMenu from "../components/SideMenu";
+import styles from "../styles/Home.module.css";
 //  import Head from "next/head";
-//  import styles from "../styles/Home.module.css";
 
 export default function Home() {
-  return <SideMenu> </SideMenu>;
+  return(
+    <div className={styles.container}>
+      <SideMenu> </SideMenu>;
+    </div>
+  );
 }
