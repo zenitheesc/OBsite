@@ -1,9 +1,9 @@
 .WrapperGrid{
-    margin: 0;
-    padding: 0 15% 0 15%; 
     color: var(--stdWhite);
     text-align: center;
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
 .ContentGrid{
