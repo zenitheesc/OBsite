@@ -7,14 +7,14 @@
 }
 
 .ContentGrid{
-    display: grid;
-    grid-gap: 20px;
-    margin-bottom: 10rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
 .PackageButton{
     width: auto;
-    height: 50px;
+    padding: 20px;
     border-radius: 10px;
     background-color: var(--stdWhite);
     color: var(--darkGrey);

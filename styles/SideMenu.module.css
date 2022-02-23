@@ -1,9 +1,10 @@
 .container {
-    width: 30%;
-    height: 100vh;
-    min-height: 100vh;
+    width: 700px;
+    height: 100%;
     background-color: var(--medGrey);
-    position: absolute;  
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .wrapper {
@@ -20,7 +21,6 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    margin-top: 0vh;
-    height: 15vh;
-    padding: 5% 5vh 5% 5vh;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
