@@ -1,7 +1,6 @@
 .inputNumber {
-    padding: 1.2rem;
-    margin-right: 20px;
-    width: 100%;
+    padding: 1rem;
+    flex-grow: 1;
     border-radius: 5px;
     background-color: var(--lightGrey);
     border: 0px;
@@ -22,8 +21,8 @@
 }
 
 .labelFile {
-    padding: 1.2rem;
-    width: 30%;
+    padding: 1rem;
+    width: 10rem;
     background-color: var(--lightGrey);
     color: var(--darkGrey);
     text-transform: uppercase;
