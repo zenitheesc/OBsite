@@ -1,18 +1,10 @@
 .footerContainer {
-    position: absolute;
-    bottom: 0px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    justify-content: space-between;
+    justify-items: center;
     width: 100%;
     background-color: var(--lightGrey);
-}
-
-.portrait {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     padding: 20px;
-    position: relative;
 }
 
 .image {
