@@ -1,0 +1,8 @@
+.footerContainer {
+    display: flex;
+    justify-content: space-between;
+    justify-items: center;
+    width: 100%;
+    background-color: var(--lightGrey);
+    padding: 20px 65px 20px 65px;
+}
