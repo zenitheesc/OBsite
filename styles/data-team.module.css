@@ -1,0 +1,51 @@
+.inputNumber {
+    padding: 1rem;
+    flex-grow: 1;
+    border-radius: 5px;
+    background-color: var(--lightGrey);
+    border: 0px;
+    color: var(--darkGrey);
+    font-weight: bold;
+    font-size: 15px;
+    text-transform: uppercase;
+    -moz-appearance: textfield;
+    -webkit-appearance: textfield;
+}
+
+.inputNumber:hover {
+    background-color: var(--stdCyan);  
+}
+
+.inputNumber:active {
+    transform: translateY(1px);
+}
+
+.labelFile {
+    padding: 1rem;
+    width: 10rem;
+    background-color: var(--lightGrey);
+    color: var(--darkGrey);
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.labelFile:hover {
+    background-color: var(--stdCyan);
+    border: 0px solid var(--stdCyan);
+}
+
+.labelFile:active {
+    transform: translateY(3px);
+}
+
+.inputFile {
+    display: none;
+}
+    
+.button:active {
+    opacity: 0.8;
+    transform: translateY(4px);
+}
