@@ -41,18 +41,9 @@ export default function SideMenu() {
         </div>
 
         <PackageGrid>
-          <PackageButtons time="15:32:51" />
-          <PackageButtons time="15:32:51" />
-          <PackageButtons time="15:32:51" />
-          <PackageButtons time="15:32:51" />
-          <PackageButtons time="15:32:51" />
-          <PackageButtons time="15:32:51" />
-          <PackageButtons time="15:32:51" />
-          <PackageButtons time="15:32:51" />
-          <PackageButtons time="15:32:51" />
-          <PackageButtons time="15:32:51" />
-          <PackageButtons time="15:32:51" />
-          <PackageButtons time="15:32:51" />
+          {packageList.map((packageData, key) => (
+            <PackageButtons key={key} time={packageData["time-stamp"]} />
+          ))}
         </PackageGrid>
       </div>
       <Footer />
