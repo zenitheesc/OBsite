@@ -16,6 +16,11 @@ export default function SideMenu() {
   const [jsonExample, jsonExampleSetter] = useState();
   const [packageList, packageListSetter] = useState([]);
 
+  const [binaries, binariesLoading, binariesError] = useCollection(
+    firebase.firestore().collection("binary-data/users/" + (teamId || 0)),
+    {}
+  );
+
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>
