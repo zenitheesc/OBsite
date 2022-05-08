@@ -37,6 +37,7 @@ export default function SideMenu() {
     <div className={styles.container}>
       <div className={styles.wrapper}>
         <div className={styles.headerBox}>
+          <DataTeam idSetter={teamIdSetter} jsonSetter={jsonExampleSetter} />
           <HorizontalLine />
         </div>
 
