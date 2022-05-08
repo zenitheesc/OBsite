@@ -21,6 +21,18 @@ export default function SideMenu() {
     {}
   );
 
+  useEffect(() => {
+    const array = [];
+
+    if (!binariesLoading && binaries) {
+      binaries.docs.map((doc) => array.push(doc.data()));
+    }
+
+    array.sort((a, b) => (a.date < b.date ? 0 : -1));
+
+    packageListSetter(array);
+  }, [binaries, teamId, jsonExample]);
+
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>
