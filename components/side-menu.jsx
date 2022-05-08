@@ -6,6 +6,11 @@ import Footer from "./footer";
 import PackageGrid from "./package-grid";
 import PackageButtons from "./package-buttons";
 
+import firebase from "../firebase/client-app";
+import { useCollection } from "react-firebase-hooks/firestore";
+import { useState } from "react";
+import { useEffect } from "react";
+
 export default function SideMenu() {
   return (
     <div className={styles.container}>
