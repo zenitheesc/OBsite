@@ -6,6 +6,20 @@ export default function DataTeam({ idSetter, jsonSetter }) {
   const [teamTempID, teamTempIDSetter] = useState(0);
   const [jsonExample, jsonExampleSetter] = useState({});
 
+  const changeJsonExample = (event) => {
+    let reader = new FileReader();
+
+    reader.onload = (event) => {
+      try {
+        jsonExampleSetter(JSON.parse(event.target.result));
+      } catch {
+        alert("O json inserido não é válido!");
+      }
+    };
+
+    reader.readAsText(event.target.files[0]);
+  };
+
   const startReading = () => {
     jsonSetter(jsonExample);
     idSetter(teamTempID);
@@ -21,6 +35,10 @@ export default function DataTeam({ idSetter, jsonSetter }) {
         max="100"
         className={styles.inputNumber}
         placeholder="Número da equipe"
+        onChange={(evt) => {
+          teamTempIDSetter(evt.target.value);
+        }}
+        value={teamTempID}
       />
       <label htmlFor="Upload" className={styles.labelFile}>
         Upload
