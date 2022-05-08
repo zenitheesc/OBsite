@@ -28,8 +28,10 @@ export default function DataTeam({ idSetter, jsonSetter }) {
           type="file"
           name="Upload"
           id="Upload"
+          accept="application/JSON"
           className={styles.inputFile}
           placeholder="Upload"
+          onChange={changeJsonExample}
         />
       </label>
       <input
