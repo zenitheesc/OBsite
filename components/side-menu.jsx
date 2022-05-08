@@ -12,6 +12,10 @@ import { useState } from "react";
 import { useEffect } from "react";
 
 export default function SideMenu() {
+  const [teamId, teamIdSetter] = useState(0);
+  const [jsonExample, jsonExampleSetter] = useState();
+  const [packageList, packageListSetter] = useState([]);
+
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>
