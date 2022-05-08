@@ -16,10 +16,8 @@ export default function SideMenu() {
     <div className={styles.container}>
       <div className={styles.wrapper}>
         <div className={styles.headerBox}>
-          <DataTeam />
+          <HorizontalLine />
         </div>
-
-        <HorizontalLine />
 
         <PackageGrid>
           <PackageButtons time="15:32:51" />
