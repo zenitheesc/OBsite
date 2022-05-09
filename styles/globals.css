@@ -18,6 +18,7 @@ body {
   --lightGrey: #C4C4C4;
   --stdWhite: #E8E8E8;
   --stdCyan: #1BC47D;
+  --darkCyan: #14a86a;
 }
 
 ::-webkit-scrollbar {
