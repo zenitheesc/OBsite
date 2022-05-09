@@ -23,6 +23,11 @@ function binToInt(template, binary) {
 	return parseInt(binString, 2)
 }
 
+function binToBoolean(template, binary) {
+	let byte = binary.splice(0, template.size).reverse();
+	return byte > 0
+}
+
 function binToFloat(template, binary) {
 
 	let byteArray = binary.splice(0, template.size).reverse();
