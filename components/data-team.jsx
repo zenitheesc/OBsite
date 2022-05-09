@@ -3,8 +3,8 @@ import { useState } from "react";
 import styles from "../styles/data-team.module.css";
 
 export default function DataTeam({ idSetter, jsonSetter }) {
-  const [teamTempID, teamTempIDSetter] = useState(0);
-  const [jsonExample, jsonExampleSetter] = useState({});
+  const [teamTempID, teamTempIDSetter] = useState();
+  const [jsonExample, jsonExampleSetter] = useState(null);
 
   const changeJsonExample = (event) => {
     let reader = new FileReader();
@@ -13,16 +13,22 @@ export default function DataTeam({ idSetter, jsonSetter }) {
       try {
         jsonExampleSetter(JSON.parse(event.target.result));
       } catch {
+        jsonExampleSetter(null);
         alert("O json inserido não é válido!");
       }
     };
 
-    reader.readAsText(event.target.files[0]);
+    if (event.target.files[0]) reader.readAsText(event.target.files[0]);
   };
 
   const startReading = () => {
-    jsonSetter(jsonExample);
-    idSetter(teamTempID);
+    if (jsonExample) {
+      window.dispatchEvent(new CustomEvent("unselect-all"));
+      jsonSetter(jsonExample);
+      idSetter(teamTempID);
+    } else {
+      alert("Selecione um json como exemplo");
+    }
   };
 
   return (
@@ -34,14 +40,14 @@ export default function DataTeam({ idSetter, jsonSetter }) {
         min="1"
         max="100"
         className={styles.inputNumber}
-        placeholder="Número da equipe"
+        placeholder="ID"
         onChange={(evt) => {
           teamTempIDSetter(evt.target.value);
         }}
         value={teamTempID}
       />
       <label htmlFor="Upload" className={styles.labelFile}>
-        Upload
+        JSON
         <input
           type="file"
           name="Upload"
