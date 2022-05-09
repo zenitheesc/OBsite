@@ -18,6 +18,7 @@ class Type {
 const DataSizes = {
 	"int": 2,
 	"float": 4,
+	"boolean": 1
 }
 
 const ntypeof = (value) => {
@@ -41,7 +42,7 @@ const iterate = (obj, paths = [], path = []) => {
 			let size = DataSizes[typeName];
 
 			paths.push(new Type(Array.from(path), typeName, size));
-
+			obj[key] = null;
 		}
 		else {
 			iterate(currValue, paths, path)

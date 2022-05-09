@@ -1,10 +1,13 @@
 export function applyTemplate(templates, binary) {
-
+	const currBinary = JSON.parse(JSON.stringify(binary));
+	const filledTemplate = [];
 	for (const template of templates) {
-		template.value = BinToData[template.typeName](template, binary);
+		if (currBinary.length === 0) break;
+		template.value = BinToData[template.typeName](template, currBinary);
+		filledTemplate.push(template);
 	}
 
-	return templates;
+	return filledTemplate;
 }
 
 function toByteString(template, byteArray) {
@@ -63,23 +66,6 @@ function binToString(template, binary) {
 const BinToData = {
 	"int": binToInt,
 	"float": binToFloat,
-	"string": binToString
-}
-
-function getJSON(realJson, types) {
-	let filledJSON = realJson;
-	for (const type of types) {
-
-		let tempJSON = filledJSON;
-		let lastTag = type.path.pop();
-
-		for (const tag of type.path) {
-
-			tempJSON = tempJSON[tag];
-		}
-
-		tempJSON[lastTag] = type.value;
-
-	}
-	return filledJSON;
+	"string": binToString,
+	"boolean": binToBoolean
 }
