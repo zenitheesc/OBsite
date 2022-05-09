@@ -86,6 +86,22 @@ export default function DataView(props) {
     RAW_CSV: rawCsvView,
   };
 
+  const downloadFile = async () => {
+    const myData = views[converterType];
+    const extension =
+      converterType == "CSV" || converterType == "RAW_CSV" ? "csv" : "json";
+
+    const fileName = converterType.toLowerCase() + "." + extension;
+
+    const blob = new Blob([myData], { type: "application/json" });
+    const href = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+
+    link.href = href;
+    link.download = fileName;
+    link.click();
+  };
+
   return (
     <section className={styles.container}>
       <div className={styles.displayHeader}>
