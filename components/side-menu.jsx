@@ -11,9 +11,16 @@ import { useCollection } from "react-firebase-hooks/firestore";
 import { useState } from "react";
 import { useEffect } from "react";
 
-export default function SideMenu() {
-  const [teamId, teamIdSetter] = useState(0);
-  const [jsonExample, jsonExampleSetter] = useState();
+export default function SideMenu(props) {
+  const {
+    teamId,
+    teamIdSetter,
+    jsonExample,
+    jsonExampleSetter,
+    selectedPackages,
+    selectedPackagesSetter,
+  } = props;
+
   const [packageList, packageListSetter] = useState([]);
 
   const [binaries, binariesLoading, binariesError] = useCollection(
@@ -21,14 +28,36 @@ export default function SideMenu() {
     {}
   );
 
+  const addPackage = (newPackage) => {
+    const idx = selectedPackages.indexOf(newPackage);
+    if (idx != -1) return;
+
+    selectedPackages.push(newPackage);
+    selectedPackages.sort((a, b) =>
+      a["time-stamp"] < b["time-stamp"] ? 0 : -1
+    );
+
+    selectedPackagesSetter([...selectedPackages]);
+  };
+
+  const removePackage = (oldPackage) => {
+    const idx = selectedPackages.indexOf(oldPackage);
+    selectedPackages.splice(idx, 1);
+    if (idx == -1) return;
+    selectedPackages.sort((a, b) =>
+      a["time-stamp"] < b["time-stamp"] ? 0 : -1
+    );
+    selectedPackagesSetter([...selectedPackages]);
+  };
+
   useEffect(() => {
     const array = [];
-
+    selectedPackagesSetter([]);
     if (!binariesLoading && binaries) {
       binaries.docs.map((doc) => array.push(doc.data()));
     }
 
-    array.sort((a, b) => (a.date < b.date ? 0 : -1));
+    array.sort((a, b) => (a["time-stamp"] < b["time-stamp"] ? 0 : -1));
 
     packageListSetter(array);
   }, [binaries, teamId, jsonExample]);
@@ -43,7 +72,12 @@ export default function SideMenu() {
 
         <PackageGrid>
           {packageList.map((packageData, key) => (
-            <PackageButtons key={key} time={packageData["time-stamp"]} />
+            <PackageButtons
+              key={key}
+              package={packageData}
+              onAdd={addPackage}
+              onRemove={removePackage}
+            />
           ))}
         </PackageGrid>
       </div>
