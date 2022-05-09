@@ -7,8 +7,7 @@ export default function buildJSON_API(req, res) {
     }
   
     const body = JSON.parse(req.body);
-    console.log(body);
     let dataJSON;
-    dataJSON = buildJSON(body.template, body.binary, body.exampleJSON);
+    dataJSON = buildJSON(body.binary, body.exampleJSON);
     res.status(200).json({data: dataJSON});
 }
