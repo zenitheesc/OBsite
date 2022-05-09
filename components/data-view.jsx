@@ -16,6 +16,61 @@ export default function DataView(props) {
   const [jsonView, jsonViewSetter] = useState([]);
   const [csvView, csvViewSetter] = useState([]);
   const [rawCsvView, rawCsvViewSetter] = useState([]);
+
+  const viewOptions = ["JSON", "CSV", "BYTES", "RAW", "RAW_CSV"];
+  const parser = (json) => JSON.stringify(json, null, 4);
+
+  const converters = {
+    JSON: (selectedPackages) => {
+      let json = selectedPackages.map((data) =>
+        buildJSON(data.binary, jsonExample || jsonBaseExample)
+      );
+      jsonViewSetter(parser(json));
+    },
+
+    BYTES: (selectedPackages) => {
+      let bytesList = selectedPackages.map((data) => data.binary);
+      bytesViewSetter(parser([...bytesList]));
+    },
+
+    RAW: (selectedPackages) => {
+      rawViewSetter(parser(selectedPackages));
+    },
+
+    CSV: (selectedPackages) => {
+      const jsonList = selectedPackages.map((data) =>
+        buildJSON(data.binary, jsonExample || jsonBaseExample)
+      );
+      json2csv(jsonList, (err, csv) => csvViewSetter(csv), {
+        delimiter: {
+          field: ", ",
+          eol: "\n",
+        },
+      });
+    },
+
+    RAW_CSV: (selectedPackages) => {
+      json2csv(selectedPackages, (err, csv) => rawCsvViewSetter(csv), {
+        delimiter: {
+          field: ", ",
+          eol: "\n",
+        },
+      });
+    },
+  };
+
+  useEffect(() => {
+    converters[converterType](selectedPackages);
+  }, [selectedPackages, converterType]);
+
+  const views = {
+    JSON: jsonView,
+    BYTES: bytesView,
+    RAW: rawView,
+    CSV: csvView,
+    RAW_CSV: rawCsvView,
+  };
+
   return (
     <section className={styles.container}>
       <div className={styles.displayHeader}>
