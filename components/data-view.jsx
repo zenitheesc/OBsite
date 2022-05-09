@@ -6,6 +6,21 @@ import styles from "../styles/data-view.module.css";
 import { json2csv, json2csvAsync } from "json-2-csv";
 import { useEffect } from "react";
 
+const jsonBaseExample = {
+  equipe: 0,
+  bateria: 24,
+  temperatura: 30,
+  pressao: 1,
+  giroscopio: [42, 90, 30],
+  acelerometro: [10, 3, 4],
+  payload: {
+    valor1: 420.1415,
+    classe: {
+      array1: [69, 123, 543],
+      valor2: "neste log a temperatura medida foi de 200 graus centigrados",
+    },
+  },
+};
 
 export default function DataView(props) {
   const { teamId, jsonExample, selectedPackages } = props;
