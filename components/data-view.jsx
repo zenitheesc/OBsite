@@ -5,6 +5,7 @@ import { getTemplate } from "../services/get-template";
 import styles from "../styles/data-view.module.css";
 import { json2csv, json2csvAsync } from "json-2-csv";
 import { useEffect } from "react";
+import { MdOutlineFileDownload } from "react-icons/md";
 
 const jsonBaseExample = {
   equipe: 0,
@@ -91,7 +92,7 @@ export default function DataView(props) {
     const extension =
       converterType == "CSV" || converterType == "RAW_CSV" ? "csv" : "json";
 
-    const fileName = converterType.toLowerCase() + "." + extension;
+    const fileName = "data." + extension;
 
     const blob = new Blob([myData], { type: "application/json" });
     const href = URL.createObjectURL(blob);
@@ -105,7 +106,7 @@ export default function DataView(props) {
   return (
     <section className={styles.container}>
       <div className={styles.displayHeader}>
-        <select
+        <select className={styles.dropdown}
           onChange={(evt) => {
             converterTypeSetter(evt.target.value);
           }}
@@ -115,7 +116,7 @@ export default function DataView(props) {
           ))}
         </select>
         <h1>Equipe: {teamId} </h1>
-        <button onClick={downloadFile}>baixar</button>
+        <MdOutlineFileDownload size={28} onClick={downloadFile} />
       </div>
 
       <div className={styles.displayBody}>
