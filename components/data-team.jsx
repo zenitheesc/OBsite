@@ -57,7 +57,6 @@ export default function DataTeam({ idSetter, jsonSetter, dateSetter }) {
         <input
           className={styles.inputDate}
           type="date"
-          max={new Date().toISOString().split("T")[0]}
           value={tempDate}
           onChange={(evt) => tempDateSetter(evt.target.value)}
         />
