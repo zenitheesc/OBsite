@@ -21,10 +21,11 @@ export default function SideMenu(props) {
     selectedPackagesSetter,
   } = props;
 
+  const [date, dateSetter] = useState();
   const [packageList, packageListSetter] = useState([]);
 
   const [binaries, binariesLoading, binariesError] = useCollection(
-    firebase.firestore().collection("binary-data/users/" + (teamId || 0)),
+    firebase.firestore().collection(`binary-data/${date}/${teamId || 0}`),
     {}
   );
 
@@ -66,7 +67,11 @@ export default function SideMenu(props) {
     <div className={styles.container}>
       <div className={styles.wrapper}>
         <div className={styles.headerBox}>
-          <DataTeam idSetter={teamIdSetter} jsonSetter={jsonExampleSetter} />
+          <DataTeam
+            idSetter={teamIdSetter}
+            jsonSetter={jsonExampleSetter}
+            dateSetter={dateSetter}
+          />
           <HorizontalLine />
         </div>
 
