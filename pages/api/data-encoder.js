@@ -6,11 +6,7 @@ const database = firebase.firestore()
 
 const ntypeof = (value) => {
   if (typeof value === "number") {
-    if (Number.isInteger(value)) {
-      return "int"
-    }
-    return "float"
-
+    return Number.isInteger(value) ? "int" : "float";
   }
   return typeof value;
 }
@@ -43,13 +39,11 @@ const sendBytes = async (date, id, newPackage) => {
 
 const getTodayDate = () => {
   const today = new Date();
-  const day = String(today.getDate()).padStart(2,'0');
-  const month = String(today.getMonth() + 1).padStart(2,'0');
+  const day = String(today.getDate()).padStart(2, '0');
+  const month = String(today.getMonth() + 1).padStart(2, '0');
   const year = today.getFullYear();
 
   return `${year}-${month}-${day}`
-
-
 }
 
 export default function saveProbeData(req, res) {
@@ -57,10 +51,13 @@ export default function saveProbeData(req, res) {
     res.status(405).send({ message: 'Only POST requests allowed' });
     return;
   }
+
   const probeData = req.body;
   const template = getTemplate(probeData);
   const byteArray = [];
+
   byteArray.push(probeData["equipe"]);
+
   template.forEach(type => {
     switch (ntypeof(type.value)) {
       case "int":
@@ -80,14 +77,14 @@ export default function saveProbeData(req, res) {
         break;
     }
   });
+
   const dataPackage = {
     "equipe": byteArray[0],
     "binary": byteArray,
     "time-stamp": firebase.firestore.Timestamp.fromDate(new Date())
   }
 
-    sendBytes(getTodayDate(), dataPackage.equipe, dataPackage);
-
+  sendBytes(getTodayDate(), dataPackage.equipe, dataPackage);
   let hexArray = byteArray.map(byte => byte.toString(16));
   res.status(200).json(hexArray);
 }

@@ -57,7 +57,6 @@ export default function SideMenu(props) {
     if (!binariesLoading && binaries) {
       binaries.docs.map((doc) => array.push(doc.data()));
       for (const data of array) {
-        console.log(data)
         data.binary.shift();
       }
     }
