@@ -48,6 +48,12 @@ export default function PackageButtons(props) {
     };
   }, []);
 
+  const convertDate = (dateSeconds) => {
+    let date = new Date(dateSeconds*1000);
+
+    return `${date.toLocaleString()}`
+  }
+
   return (
     <div
       onClick={onClickHandler}
@@ -55,7 +61,7 @@ export default function PackageButtons(props) {
         isSelected ? styles.packageButtonSelected : styles.packageButton
       }
     >
-      {packageData["time-stamp"]}
+      {convertDate(packageData["time-stamp"].seconds)}
     </div>
   );
 }

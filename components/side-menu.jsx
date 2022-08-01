@@ -35,7 +35,7 @@ export default function SideMenu(props) {
 
     selectedPackages.push(newPackage);
     selectedPackages.sort((a, b) =>
-      a["time-stamp"] < b["time-stamp"] ? 0 : -1
+      a["time-stamp"].nanoseconds < b["time-stamp"].nanoseconds ? 0 : -1
     );
 
     selectedPackagesSetter([...selectedPackages]);
