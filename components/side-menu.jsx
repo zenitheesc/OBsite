@@ -56,6 +56,10 @@ export default function SideMenu(props) {
     selectedPackagesSetter([]);
     if (!binariesLoading && binaries) {
       binaries.docs.map((doc) => array.push(doc.data()));
+      for (const data of array) {
+        console.log(data)
+        data.binary.shift();
+      }
     }
 
     array.sort((a, b) => (a["time-stamp"] < b["time-stamp"] ? 0 : -1));
