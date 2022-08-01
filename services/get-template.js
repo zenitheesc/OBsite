@@ -8,10 +8,11 @@ export const getTemplate = (obj) => {
 }
 
 class Type {
-	constructor(path, typeName, size) {
+	constructor(path, typeName, size, value) {
 		this.path = path;
 		this.typeName = typeName;
 		this.size = size;
+		this.value = value;
 	}
 }
 
@@ -41,7 +42,7 @@ const iterate = (obj, paths = [], path = []) => {
 
 			let size = DataSizes[typeName];
 
-			paths.push(new Type(Array.from(path), typeName, size));
+			paths.push(new Type(Array.from(path), typeName, size, obj[key]));
 			obj[key] = null;
 		}
 		else {
