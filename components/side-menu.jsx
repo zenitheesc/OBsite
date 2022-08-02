@@ -35,7 +35,7 @@ export default function SideMenu(props) {
 
     selectedPackages.push(newPackage);
     selectedPackages.sort((a, b) =>
-      a["time-stamp"] < b["time-stamp"] ? 0 : -1
+      a["time-stamp"].nanoseconds < b["time-stamp"].nanoseconds ? 0 : -1
     );
 
     selectedPackagesSetter([...selectedPackages]);
@@ -56,6 +56,9 @@ export default function SideMenu(props) {
     selectedPackagesSetter([]);
     if (!binariesLoading && binaries) {
       binaries.docs.map((doc) => array.push(doc.data()));
+      for (const data of array) {
+        data.binary.shift();
+      }
     }
 
     array.sort((a, b) => (a["time-stamp"] < b["time-stamp"] ? 0 : -1));

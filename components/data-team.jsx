@@ -4,7 +4,7 @@ import styles from "../styles/data-team.module.css";
 import { MdSearch } from "react-icons/md";
 
 export default function DataTeam({ idSetter, jsonSetter, dateSetter }) {
-  const [teamTempID, teamTempIDSetter] = useState();
+  const [teamTempID, teamTempIDSetter] = useState('');
   const [jsonExample, jsonExampleSetter] = useState(null);
   const [fileName, fileNameSetter] = useState("modelo");
   const [tempDate, tempDateSetter] = useState(
@@ -24,8 +24,8 @@ export default function DataTeam({ idSetter, jsonSetter, dateSetter }) {
     };
 
     if (!event.target.files[0]) return;
+    reader.readAsText(event.target.files[0])
     fileNameSetter(event.target.files[0].name);
-    reader.readAsText(event.target.files[0]);
   };
 
   const startReading = () => {
