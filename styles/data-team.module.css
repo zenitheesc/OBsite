@@ -1,0 +1,106 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+.container>* {
+	display: flex;
+	flex-direction: row;
+	margin: 0.2em;
+	padding: 0.2em;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.title {
+	font-size: 2rem;
+	margin: 0px;
+	font-weight: 600;
+	padding: 0px;
+}
+
+.inputNumber {
+	padding: 1rem;
+	border-radius: 5px;
+	width: 35%;
+	background-color: var(--stdWhite);
+	border: 0px;
+	color: var(--darkGrey);
+	font-weight: bold;
+	font-size: 15px;
+	text-transform: uppercase;
+	-moz-appearance: textfield;
+	-webkit-appearance: textfield;
+}
+
+.inputNumber:active {
+	transform: translateY(1px);
+}
+
+.labelFile {
+	padding: 1rem;
+	width: 75%;
+	background-color: var(--stdWhite);
+	color: var(--darkGrey);
+	text-transform: uppercase;
+	text-align: center;
+	font-weight: bold;
+	cursor: pointer;
+	border-radius: 5px;
+}
+
+.labelFile:hover,
+.inputDate:hover,
+.inputSearch:hover,
+.inputNumber:hover {
+	background-color: var(--lightGrey);
+	border: 0px solid var(--lightGrey);
+}
+
+.labelFile:active {
+	transform: translateY(3px);
+}
+
+.inputFile {
+	display: none;
+}
+
+.button:active {
+	opacity: 0.8;
+	transform: translateY(4px);
+}
+
+.inputDate {
+	padding: 1rem;
+	width: 60%;
+	background-color: var(--stdWhite);
+	color: var(--darkGrey);
+	text-transform: uppercase;
+	text-align: center;
+	font-weight: bold;
+	cursor: pointer;
+	border: none;
+	border-radius: 5px;
+	-moz-appearance: textfield;
+	-webkit-appearance: textfield;
+
+}
+
+.inputSearch {
+	width: 20%;
+	padding: 0.6rem;
+	border-radius: 5px;
+	background-color: var(--stdWhite);
+	border: 0px;
+	color: var(--darkGrey);
+	font-weight: bold;
+	text-transform: uppercase;
+	-moz-appearance: textfield;
+	-webkit-appearance: textfield;
+	cursor: pointer;
+}
+
+.inputSearch svg {
+	font-size: 2em;
+}
